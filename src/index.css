@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Skeleton Loading Animation */
+.skeleton {
+  @apply bg-gray-200 animate-pulse;
+}
+
+/* Animation Delays */
+.animation-delay-0 {
+  animation-delay: 0ms;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Hover Lift Animation */
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Fade In Animation */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide Up Animation */
+.animate-slide-up {
+  animation: slideUp 0.3s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@layer base {
+  body {
+    @apply text-[#0d0c22] antialiased;
+  }
+}
+
+@layer components {
+  .flexCenter {
+    @apply flex justify-center items-center;
+  }
+
+  .flexBetween {
+    @apply flex justify-between items-center;
+  }
+
+  .flexStart {
+    @apply flex items-start;
+  }
+
+  /* Dribbble specific components */
+  .btn-primary {
+    @apply px-4 py-2 bg-[#ea4c89] hover:bg-[#f082ac] text-white text-[14px] font-medium rounded-lg transition-colors;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 border border-[#e7e7e9] hover:border-[#0d0c22] text-[#0d0c22] text-[14px] font-medium rounded-lg transition-colors;
+  }
+
+  .input-primary {
+    @apply w-full px-4 py-3 border border-[#e7e7e9] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ea4c89] focus:ring-opacity-50;
+  }
+
+  .nav-link {
+    @apply text-[#6e6d7a] hover:text-[#0d0c22] text-[14px] font-medium transition-colors;
+  }
+
+  /* Layout containers */
+  .max-container {
+    @apply max-w-[1320px] mx-auto px-4;
+  }
+
+  .content-container {
+    @apply mt-[72px] min-h-[calc(100vh-72px)];
+  }
+
+  /* Project grid */
+  .projects-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8;
+  }
+
+  /* Typography */
+  .heading1 {
+    @apply text-[24px] md:text-[32px] font-bold leading-tight;
+  }
+
+  .heading2 {
+    @apply text-[20px] md:text-[24px] font-bold leading-tight;
+  }
+
+  .body-regular {
+    @apply text-[16px] leading-normal;
+  }
+
+  .body-medium {
+    @apply text-[14px] leading-normal;
+  }
+
+  .small-regular {
+    @apply text-[12px] leading-normal;
+  }
+
+  /* Colors */
+  .text-primary {
+    @apply text-[#0d0c22];
+  }
+
+  .text-secondary {
+    @apply text-[#6e6d7a];
+  }
+
+  .text-accent {
+    @apply text-[#ea4c89];
+  }
+
+  /* Borders */
+  .border-subtle {
+    @apply border-[#e7e7e9];
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#f8f7f4];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#e7e7e9] rounded-full hover:bg-[#6e6d7a];
+}
+
+/* Focus styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-[#ea4c89] ring-opacity-50;
+}

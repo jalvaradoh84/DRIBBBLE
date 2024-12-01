@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, sans-serif;
+}
+
+/* Utility Classes */
+.flexCenter {
+  @apply flex justify-center items-center;
+}
+
+.flexBetween {
+  @apply flex justify-between items-center;
+}
+
+.flexStart {
+  @apply flex items-center justify-start;
+}
+
+/* Project Grid */
+.projects-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Project Card */
+.project-card {
+  @apply relative overflow-hidden rounded-lg;
+}
+
+.project-card_image {
+  @apply w-full h-full object-cover;
+}
+
+.project-card_overlay {
+  @apply absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300;
+}
+
+/* Form Elements */
+.form-input {
+  @apply w-full px-4 py-3 border border-[#e7e7e9] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ea4c89] focus:ring-opacity-50;
+}
+
+.form-label {
+  @apply block text-[14px] font-medium text-[#0d0c22] mb-2;
+}
+
+.btn-primary {
+  @apply px-4 py-3 bg-[#ea4c89] hover:bg-[#f082ac] text-white text-[14px] font-medium rounded-lg transition-colors;
+}
+
+.btn-secondary {
+  @apply px-4 py-3 border border-[#e7e7e9] hover:border-[#0d0c22] text-[#0d0c22] text-[14px] font-medium rounded-lg transition-colors;
+}
+
+/* Modal */
+.modal {
+  @apply fixed inset-0 z-50 overflow-y-auto;
+}
+
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-75 transition-opacity;
+}
+
+.modal-content {
+  @apply relative bg-white rounded-lg mx-auto my-8 max-w-lg w-full p-6;
+}
+
+/* Navigation */
+.nav-link {
+  @apply text-[#6e6d7a] hover:text-[#0d0c22] text-[14px] font-medium transition-colors;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#f8f7f4];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#e7e7e9] rounded-full hover:bg-[#6e6d7a];
+}
+
+/* Focus Styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-[#ea4c89] ring-opacity-50;
+}
